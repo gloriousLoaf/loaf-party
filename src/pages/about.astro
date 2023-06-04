@@ -1,4 +1,22 @@
 ---
+import '../styles/global.css';
+
+const pageTitle = 'about me';
+
+const identity = {
+    firstName: 'David',
+    country: 'United States',
+    occupation: 'Software Engineer',
+    hobbies: ['reading', 'writing', 'fitness'],
+};
+
+const skills = ['HTML', 'CSS', 'JavaScript', 'React', 'Astro', 'Writing Docs'];
+const happy = true;
+const finished = false;
+const goal = 3;
+/* see style tags - unnecessary, but shows how to use a variable */
+const skillColor = 'var(--primary)';
+const textCase = 'uppercase';
 ---
 
 <html lang="en">
@@ -7,12 +25,14 @@
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
-        <title>loaf.party</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.fluid.classless.min.css">
+        <title>{pageTitle}</title>
     </head>
-    <style>
-        body {
-            margin: 2%;
+    <style define:vars={{skillColor, textCase}}>
+        .skill {
+            color: var(--skillColor);
+            font-weight: bold;
+            text-transform: var(--textCase);
         }
     </style>
     <body>
@@ -20,12 +40,32 @@
         <a href="/about/">about</a>
         <a href="/blog/">blog</a>
 
-        <h1>about me</h1>
+        <h1>{pageTitle}</h1>
         <h2>david metcalf, web developer</h2>
         <p>
             if you are looking for a bit about me, please head to
             <a href="https://metcalf.dev" target="_blank">metcalf.dev</a>
             to view my portfolio site.
         </p>
+
+        <p>Here are a few facts about me:</p>
+        <ul>
+            <li>My name is {identity.firstName}.</li>
+            <li>I live in {identity.country} and I work as a {identity.occupation}.</li>
+            {identity.hobbies.length >= 2 && 
+                <li>Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}</li>
+            } 
+        </ul>
+
+        <p>My skills are:</p>
+        <ul>
+            {skills.map((skill) => <li class="skill">{skill}</li>)}
+        </ul>
+
+        {happy && <p>I am happy to be learning Astro!</p>}
+
+        {finished && <p>I finished this tutorial!</p>}
+
+        {goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
     </body>
 </html>

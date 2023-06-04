@@ -1,4 +1,7 @@
 ---
+import '../styles/global.css';
+
+const pageTitle = 'blog';
 ---
 
 <html lang="en">
@@ -7,23 +10,30 @@
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
-        <title>loaf.party</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.fluid.classless.min.css">
+        <title>{pageTitle}</title>
     </head>
-    <style>
-        body {
-            margin: 2%;
-        }
-    </style>
     <body>
         <a href="/">home</a>
         <a href="/about/">about</a>
         <a href="/blog/">blog</a>
 
-        <h1>blog</h1>
+        <h1>{pageTitle}</h1>
         <h2>so many things to share... i think?</h2>
         <p>
             we'll see where this goes
         </p>
+
+        <ul>
+            <li>
+                <a href="/posts/post-1/">Post 1</a>
+            </li>
+            <li>
+                <a href="/posts/post-2/">Post 2</a>
+            </li>
+            <li>
+                <a href="/posts/post-3/">Post 3</a>
+            </li>
+        </ul>
     </body>
 </html>
