@@ -1,5 +1,5 @@
 ---
-layout: ../layouts/base-layout.astro
+layout: ../../layouts/base-layout.astro
 title: My Third Blog Post
 author: Astro Learner
 description: "I had some challenges, but asking in the community really helped!"
