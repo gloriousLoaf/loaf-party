@@ -11,15 +11,15 @@ const { frontmatter } = Astro.props;
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.fluid.classless.min.css">
-        <title>{frontmatter.title}</title>
+        <title>{frontmatter?.title}</title>
     </head>
     <body>
-        <h1>{frontmatter.title}</h1>
+        <h1>{frontmatter?.title}</h1>
 
         <slot />
 
         <p>
-            published {new Date(frontmatter.pubDate).toString()}
+            published {new Date(frontmatter?.pubDate).toString()}
         </p>
     </body>
 </html>
