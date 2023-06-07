@@ -1,5 +1,7 @@
 ---
-import '../styles/global.css'
+import '../styles/global.css';
+import Navigation from '../components/navigation.astro';
+
 const pageTitle = 'loaf.party';
 ---
 
@@ -13,9 +15,7 @@ const pageTitle = 'loaf.party';
         <title>{pageTitle}</title>
     </head>
     <body>
-        <a href="/">home</a>
-        <a href="/about/">about</a>
-        <a href="/blog/">blog</a>
+        <Navigation />
 
         <h1>{pageTitle}</h1>
 
