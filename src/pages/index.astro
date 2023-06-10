@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
-import Navigation from '../components/navigation.astro';
+import Header from '../components/header.astro';
+import Footer from '../components/footer.astro';
 
 const pageTitle = 'loaf.party';
 ---
@@ -15,7 +16,7 @@ const pageTitle = 'loaf.party';
         <title>{pageTitle}</title>
     </head>
     <body>
-        <Navigation />
+        <Header />
 
         <h1>{pageTitle}</h1>
 
@@ -26,5 +27,7 @@ const pageTitle = 'loaf.party';
         <p>
             content is all copy-pasta filler for now, and styling is whatever
         </p>
+
+        <Footer />
     </body>
 </html>
