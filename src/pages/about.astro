@@ -27,7 +27,7 @@ const textCase = 'uppercase';
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.fluid.classless.min.css">
+        <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.fluid.classless.min.css"> -->
         <title>{pageTitle}</title>
     </head>
     <style define:vars={{skillColor, textCase}}>
@@ -69,5 +69,9 @@ const textCase = 'uppercase';
         {goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
         
         <Footer />
+
+        <script>
+            import "../scripts/menu.js";
+        </script>
     </body>
 </html>
